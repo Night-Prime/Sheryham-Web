@@ -4,12 +4,17 @@ import useFetch from "../hooks/useFetch";
 import Cart from "../components/Cart";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../redux/cartReducer";
+import Preloader from "../components/Preloader";
 
 const Product = () => {
   const [open, setOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+
+  if (loading) {
+    return <Preloader />;
+  }
 
   let product = data?.attributes || [];
   let image =
