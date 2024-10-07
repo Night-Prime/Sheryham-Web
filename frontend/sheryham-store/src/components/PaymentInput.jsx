@@ -16,13 +16,12 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
-  let order;
+  let order = "";
 
   useEffect(() => {
-    order = product.map((item) => {
-      return item.title;
-      console.log(item.title);
-    });
+    const productDetails = product.map((item) => item.title).join(", ");
+    order = productDetails;
+
     const isValid = name && email && address && phone;
     setIsFormValid(isValid);
   }, [name, email, address, phone]);
