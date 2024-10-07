@@ -9,6 +9,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   let productPrice;
+  console.log(productPrice);
   const totalPrice = () => {
     let total = 0;
     products.forEach((item) => {
