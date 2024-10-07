@@ -5,7 +5,7 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      origin: ["http://localhost:5173"], // Your frontend URL
+      origin: ["http://localhost:5173", "https://sheryham-web.onrender.com"], // Your frontend URL
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
       headers: ["Content-Type", "Authorization", "Origin", "Accept"],
     },

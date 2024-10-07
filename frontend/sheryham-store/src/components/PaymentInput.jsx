@@ -22,45 +22,56 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
     setIsFormValid(isValid);
   }, [name, email, address, phone]);
 
+  // Choosing to redirect whatsapp for now since the payment gateway is being verified at the moment.
+
   const handlePayment = async () => {
-    let payment = {
-      tx_ref: `tx-${new Date().getTime()}`,
-      amount: price,
-      meta: {
-        _id: `CUS-${Math.floor(Math.random() * 1000000)}`,
-      },
-      redirect_url: `${process.env.TEST_FRONTEND}/payment`,
-      customer: {
-        email: email,
-        phonenumber: phone,
-        name: name,
-        address: address,
-      },
-      product: product,
-    };
-    console.log(payment);
+    const message = `Hello my name is ${name}, I want to place an order for the ${product}, which cost ${price}`;
+
+    // Then URL encode the stringified payment object
+    const encodedMessage = encodeURIComponent(message);
+
+    console.log(encodedMessage);
+    const whatsappLink = `https://wa.me/${process.env.PHONE}?text=${encodedMessage}`;
+    window.location.href = whatsappLink;
+
+    // let payment = {
+    //   tx_ref: `tx-${new Date().getTime()}`,
+    //   amount: price,
+    //   meta: {
+    //     _id: `CUS-${Math.floor(Math.random() * 1000000)}`,
+    //   },
+    //   redirect_url: `${process.env.TEST_FRONTEND}/payment`,
+    //   customer: {
+    //     email: email,
+    //     phonenumber: phone,
+    //     name: name,
+    //     address: address,
+    //   },
+    //   product: product,
+    // };
+
     // setOpen(false);
-    try {
-      const result = await paymentRequest.post(
-        "/orders/initiate-payment",
-        payment
-      );
-      if (result.data.status == "success") {
-        console.log(result.data.data.link);
-        const paymentLink = result.data.data.link;
-        window.location.href = paymentLink;
-      }
-      console.log("Result:", result.data);
-    } catch (err) {
-      if (err.response) {
-        console.log("Error response:", err.response.data);
-      } else if (err.request) {
-        console.log("Error request:", err.request);
-      } else {
-        console.log("Error message:", err.message);
-      }
-      console.log("Error config:", err.config);
-    }
+    // try {
+    //   const result = await paymentRequest.post(
+    //     "/orders/initiate-payment",
+    //     payment
+    //   );
+    //   if (result.data.status == "success") {
+    //     console.log(result.data.data.link);
+    //     const paymentLink = result.data.data.link;
+    //     window.location.href = paymentLink;
+    //   }
+    //   console.log("Result:", result.data);
+    // } catch (err) {
+    //   if (err.response) {
+    //     console.log("Error response:", err.response.data);
+    //   } else if (err.request) {
+    //     console.log("Error request:", err.request);
+    //   } else {
+    //     console.log("Error message:", err.message);
+    //   }
+    //   console.log("Error config:", err.config);
+    // }
   };
 
   return (
