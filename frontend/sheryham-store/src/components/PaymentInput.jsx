@@ -29,14 +29,15 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
   // Choosing to redirect whatsapp for now since the payment gateway is being verified at the moment.
 
   const handlePayment = async () => {
-    const message = `Hello my name is ${name}, I want to place an order for the ${order}, which cost ${price}`;
-
+    console.log(order);
+    const message = `Hello my name is ${name}, I want to place an order for the ${order}, which cost ${price} NGN`;
+    console.log("message: ", message);
     // Then URL encode the stringified payment object
     const encodedMessage = encodeURIComponent(message);
 
     console.log(encodedMessage);
-    const whatsappLink = `https://wa.me/${process.env.PHONE}?text=${encodedMessage}`;
-    window.location.href = whatsappLink;
+    // const whatsappLink = `https://wa.me/${process.env.PHONE}?text=${encodedMessage}`;
+    // window.location.href = whatsappLink;
 
     // let payment = {
     //   tx_ref: `tx-${new Date().getTime()}`,
