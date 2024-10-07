@@ -16,8 +16,12 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  let order;
 
   useEffect(() => {
+    order = product.map((item) => {
+      console.log(item.title);
+    });
     const isValid = name && email && address && phone;
     setIsFormValid(isValid);
   }, [name, email, address, phone]);
@@ -25,10 +29,6 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
   // Choosing to redirect whatsapp for now since the payment gateway is being verified at the moment.
 
   const handlePayment = async () => {
-    let order = product.map((item) => {
-      console.log(item.title);
-    });
-
     const message = `Hello my name is ${name}, I want to place an order for the ${order}, which cost ${price}`;
 
     // Then URL encode the stringified payment object
