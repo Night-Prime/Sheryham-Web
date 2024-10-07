@@ -34,10 +34,8 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
     console.log("message: ", message);
     // Then URL encode the stringified payment object
     const encodedMessage = encodeURIComponent(message);
-
-    console.log(encodedMessage);
-    // const whatsappLink = `https://wa.me/${process.env.PHONE}?text=${encodedMessage}`;
-    // window.location.href = whatsappLink;
+    const whatsappLink = `https://wa.me/${process.env.PHONE}?text=${encodedMessage}`;
+    window.location.href = whatsappLink;
 
     // let payment = {
     //   tx_ref: `tx-${new Date().getTime()}`,
