@@ -20,6 +20,7 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
 
   useEffect(() => {
     order = product.map((item) => {
+      return item.title;
       console.log(item.title);
     });
     const isValid = name && email && address && phone;
