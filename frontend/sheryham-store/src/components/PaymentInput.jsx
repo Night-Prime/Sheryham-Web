@@ -25,7 +25,11 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
   // Choosing to redirect whatsapp for now since the payment gateway is being verified at the moment.
 
   const handlePayment = async () => {
-    const message = `Hello my name is ${name}, I want to place an order for the ${product}, which cost ${price}`;
+    let order = product.map((item) => {
+      console.log(item.title);
+    });
+
+    const message = `Hello my name is ${name}, I want to place an order for the ${order}, which cost ${price}`;
 
     // Then URL encode the stringified payment object
     const encodedMessage = encodeURIComponent(message);
@@ -164,7 +168,7 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
                           onClick={handlePayment}
                           disabled={!isFormValid}
                         >
-                          Make Payment
+                          Place Order
                         </button>
                       </div>
                     </div>
