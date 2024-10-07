@@ -16,11 +16,11 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
-  const [order, setOrder] = useState("");
+  let order = "";
 
   useEffect(() => {
     const productDetails = product.map((item) => item.title).join(", ");
-    setOrder(productDetails);
+    order = productDetails;
 
     const isValid = name && email && address && phone;
     setIsFormValid(isValid);
@@ -30,7 +30,9 @@ const PaymentInput = ({ open, setOpen, product, price }) => {
 
   const handlePayment = async () => {
     console.log(order);
-    const message = `Hello, my name is ${name}. I want to place an order for the ${order}, which costs ${price} NGN`;
+    const message = `Hello my name is ${name}, I want to place an order for the ${order}, which cost ${price} NGN`;
+    console.log("message: ", message);
+    // Then URL encode the stringified payment object
     const encodedMessage = encodeURIComponent(message);
     const whatsappLink = `https://wa.me/${process.env.PHONE}?text=${encodedMessage}`;
     window.location.href = whatsappLink;
