@@ -38,6 +38,7 @@ const SubHero = () => {
           start: "top 95%",
           end: "bottom 35%",
           scrub: 1,
+          once: true,
         },
       }
     );

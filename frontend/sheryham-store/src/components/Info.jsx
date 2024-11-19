@@ -9,7 +9,7 @@ import {
 const Info = () => {
   return (
     <section className="h-max w-screen bg-gray-200">
-      <main className="h-screen md:h-40 w-2/3 md:w-11/12 flex flex-col md:flex-row items-center md:justify-center md:gap-0 gap-6 mx-auto">
+      <main className="h-[70vh] md:h-40 w-2/3 md:w-11/12 flex flex-col md:flex-row items-center md:justify-center md:gap-0 gap-6 mx-auto">
         <div className="w-full md:w-1/4 flex flex-col md:flex-row items-center md:items-start gap-5">
           <div className="w-12 object-contain">
             <TruckIcon />
