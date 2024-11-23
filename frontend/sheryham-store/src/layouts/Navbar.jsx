@@ -56,6 +56,7 @@ export default function Navbar() {
           <Link to="/" className="-m-1.5 p-1.5 flex flex-row items-center">
             <span className="sr-only font-blackletter">Sheyham.</span>
             <img
+              loading="lazy"
               src="/logo.png"
               alt="sheryham-logo"
               className="object-contain h-12 w-12"
@@ -183,6 +184,7 @@ export default function Navbar() {
             <a href="#" className="-m-1.5 p-1.5 flex flex-row items-center">
               <span className="sr-only">Your Company</span>
               <img
+                loading="lazy"
                 src="/logo.png"
                 alt="sheryham-logo"
                 className="object-contain h-12 w-12"

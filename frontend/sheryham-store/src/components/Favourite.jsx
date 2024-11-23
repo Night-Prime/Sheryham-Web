@@ -20,7 +20,12 @@ const Favourite = () => {
               className="flex flex-row gap-5 py-2 items-center justify-between"
               key={item.title}
             >
-              <img src={item.img} alt={item.title} className="w-8 h-8" />
+              <img
+                loading="lazy"
+                src={item.img}
+                alt={item.title}
+                className="w-8 h-8"
+              />
               <Link to={item.link} className="w-full">
                 <h1 className="font-semibold">{item.title}</h1>
               </Link>

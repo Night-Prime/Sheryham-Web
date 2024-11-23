@@ -5,7 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         "main-img":
-          "url('https://ik.imagekit.io/0y99xuz0yp/images/cloth%20mockup%20black1%20(1).jpg?updatedAt=1717291760493')",
+          "url('https://ik.imagekit.io/0y99xuz0yp/cloth%20mockup%20black1%20(1).jpg?updatedAt=1732370763392')",
       },
       boxShadow: {
         right: "10px 0 10px -5px rgba(0, 0, 0, 0.3)",

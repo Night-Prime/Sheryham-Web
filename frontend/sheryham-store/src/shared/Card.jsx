@@ -13,6 +13,7 @@ const Card = ({ id, title, imageUrl, description, link, price }) => {
       <main className="h-full w-full flex flex-col items-center justify-between bg-white shadow-lg rounded-sm overflow-hidden">
         <Link to={link} className="w-full h-full">
           <img
+            loading="lazy"
             className="w-full h-48 object-cover"
             src={imageUrl}
             alt={title}

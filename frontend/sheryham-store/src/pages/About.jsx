@@ -7,7 +7,12 @@ const About = () => {
   return (
     <section className="h-max w-screen">
       <main className="mx-auto w-full h-full flex flex-col items-center text-center gap-2 md:gap-6">
-        <img className="object-cover w-full h-96" src={Image} alt={Image} />
+        <img
+          loading="lazy"
+          className="object-cover w-full h-96"
+          src={Image}
+          alt={Image}
+        />
         <div className="md:w-3/4 h-max mx-auto px-10 flex flex-col gap-10 md:text-center text-justify">
           <div className="py-12">
             <h1 className="font-bold text-4xl md:text-8xl mb-6">Sheryham.</h1>

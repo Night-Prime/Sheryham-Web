@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 const SubHero = () => {
   const subHeroRef = useRef(null);
   const HomeWears1 =
-    "https://ik.imagekit.io/0y99xuz0yp/images/cloth%20mockup%203.jpg?updatedAt=1717291778559";
+    "https://ik.imagekit.io/0y99xuz0yp/images/cloth%20mockup%203%20(1)%20(1).jpg?updatedAt=1732371386087";
   const HomeWears2 =
-    "https://ik.imagekit.io/0y99xuz0yp/images/cloth%20mockup%204.jpg?updatedAt=1717291748839";
+    "https://ik.imagekit.io/0y99xuz0yp/images/cloth%20mockup%204%20(1).jpg?updatedAt=1732371070556";
 
   useEffect(() => {
     const subHeroElement = subHeroRef.current;
@@ -50,13 +50,13 @@ const SubHero = () => {
         <img
           className="w-1/2 object-cover"
           src={HomeWears1}
-          loading="lazy"
+          loading="eager"
           alt="wears-image"
         />
         <img
           className="w-1/2 object-cover"
           src={HomeWears2}
-          loading="lazy"
+          loading="eager"
           alt="wears-image"
         />
         <div className="z-20 absolute top-12 w-full h-5/6 flex flex-col items-center justify-center gap-5 my-auto">

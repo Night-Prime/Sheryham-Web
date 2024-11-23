@@ -40,6 +40,7 @@ const Cart = () => {
               key={item.id}
             >
               <img
+                loading="lazy"
                 className="w-14 h-14"
                 src={process.env.REACT_APP_UPLOAD_URL + item.img}
                 alt=""
